@@ -12,5 +12,27 @@
 */
 
 Route::get('/', function () {
+    return view('index');
+});
+
+
+Route::get('/Laravel', function () {
     return view('welcome');
+});
+
+
+Route::get('/meals', function () {
+    
+    $recipes = DB::table('Recipes')->get();
+
+    return view('meals.index', compact('recipes'));
+});
+
+
+Route::get('/meals/{id}', function ($id) {
+    
+    $recipe = DB::table('Recipes')->find($id);
+
+    //return $recipe;
+    return view('meals/show', compact('recipe'));
 });
