@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-    <head>
+@extends ('layouts.master')
 
-    </head>
-    <body>
 
-          <h1> {{ $recipe-> name }}  </h1>
-                
-    </body>
-</html>
+	@section ('content')
+		<h1> {{ $recipe->name }}  </h1>
+	@endsection

@@ -12,19 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('index');
-});
-
-
-Route::get('/Laravel', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
 Route::get('/meals', function () {
     
     $recipes = DB::table('Recipes')->get();
-
     return view('meals.index', compact('recipes'));
 });
 
