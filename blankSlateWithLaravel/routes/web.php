@@ -16,17 +16,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('/meals', function () {
-    
-    $recipes = DB::table('Recipes')->get();
-    return view('meals.index', compact('recipes'));
-});
+Route::get('/recipes', 'RecipeController@index');
+
+Route::get('/recipes/create', 'RecipeController@create');
+
+Route::get('/recipes/{id}', 'RecipeController@show');
+
+Route::post('/recipes', 'RecipeController@store');
 
 
-Route::get('/meals/{id}', function ($id) {
-    
-    $recipe = DB::table('Recipes')->find($id);
+Auth::routes();
 
-    //return $recipe;
-    return view('meals/show', compact('recipe'));
-});
+Route::get('/home', 'HomeController@index');
