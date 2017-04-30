@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
 
 Route::get('/recipes', 'RecipeController@index');
@@ -28,3 +26,5 @@ Route::post('/recipes', 'RecipeController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+

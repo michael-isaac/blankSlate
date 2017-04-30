@@ -75,9 +75,10 @@ class RecipeController extends Controller
     {
         //
         $recipe = \DB::table('Recipes')->find($id);
+        $ingredients =\DB::table('RecipeIngredients')->where('recipeID', $id)->get();
 
         //return $recipe;
-        return view('recipes/show', compact('recipe'));
+        return view('recipes/show', compact('recipe', 'ingredients'));
     }
 
     /**
