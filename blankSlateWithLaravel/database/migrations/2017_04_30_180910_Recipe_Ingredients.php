@@ -17,11 +17,11 @@ class RecipeIngredients extends Migration
         Schema::create('RecipeIngredients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('descrition');
+            $table->text('description');
             $table->integer('recipeID');
             $table->integer('ingredientID');
             $table->decimal('amount');
-            $table->text('measurment');
+            $table->text('measurement');
             $table->timestamps();
         });
     }

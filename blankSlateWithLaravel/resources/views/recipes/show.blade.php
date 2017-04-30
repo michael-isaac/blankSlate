@@ -15,9 +15,9 @@
 						@foreach ($ingredients as $ingredient)
 							<li> 
 								{{ $ingredient -> amount }}
-								{{ $ingredient -> measurment }}
+								{{ $ingredient -> measurement }}
 								{{ $ingredient -> name}}
-								@if(!empty ($ingredient->descrition)), @endif
+								@if(!empty ($ingredient->description)), @endif
 								{{ $ingredient -> descrition }}
 							</li>
 						@endforeach
