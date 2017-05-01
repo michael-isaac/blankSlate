@@ -8,7 +8,7 @@
 
 				<hr>
 
-				<form method="POST" action="/recipes">
+				<form method="POST" action="/recipes" enctype="multipart/form-data">
 				 
 				 <!-- following line returns a hidden input to make sure this request is made from within our site (security) [should include in all forms]-->
 					{{ csrf_field() }}
@@ -22,7 +22,13 @@
 						<label for="directions">Directions</label>
 						<textarea class="form-control" id="directions" name="directions" ></textarea>
 					</div>
-					 
+					
+					<div class="form-group">
+					    <label for="recipeImg">Recipe Picture</label>
+					    <input type="file" id="recipeImg" name="recipeImg">
+					    <p class="help-block">Upload a .jpg</p>
+					</div>
+
 					<div class="form-group">
 						<button type="submit" class="btn btn-default">Submit</button>
 					</div>

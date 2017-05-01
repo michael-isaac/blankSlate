@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class RecipeController extends Controller
 {
@@ -50,8 +53,6 @@ class RecipeController extends Controller
         $this->validate(request(), [
             'RecipeName' => 'required',
             'directions' => 'required'
-
-
         ]);
 
 
@@ -59,8 +60,20 @@ class RecipeController extends Controller
         $recipe = new \App\Recipe;
         $recipe->name = Request('RecipeName');
         $recipe->directions = Request('directions');
+        $recipe->owner_UserID = auth()->id();
         //save it to the database
+        
+
+
+        $file = $request->file('recipeImg');
+        $filename = Request('RecipeName') . auth()->id() . '.jpg';
+        if ($file) {
+            Storage::disk('uploads')->put($filename, File::get($file));
+            $recipe->filename = Request('RecipeName') . auth()->id() . '.jpg';
+        }
+
         $recipe->save();
+
         //and then redirect to the home page
         return redirect('/');
     }

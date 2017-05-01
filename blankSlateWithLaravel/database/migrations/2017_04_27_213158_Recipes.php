@@ -17,6 +17,8 @@ class Recipes extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('directions');
+            $table->text('filename');
+            $table->integer('owner_UserID');
             $table->timestamps();
         });
     }

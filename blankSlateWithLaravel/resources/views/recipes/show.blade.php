@@ -4,6 +4,7 @@
 	@section ('content')
 		<br/>
 		<div class="container">
+			<img src="/images/{{ $recipe->filename }}" onerror="this.src='/images/default.jpg'" style="width:300px; height:300px; float:right;">
 			<div class="col-sm-8 blog-main">
 				<h1> {{ $recipe->name }}  </h1>
 				<hr>
