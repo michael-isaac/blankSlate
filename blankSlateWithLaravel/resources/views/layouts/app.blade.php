@@ -10,9 +10,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    
 
     <!-- Custom styles for this template -->
-    <link href="/css/album.css" rel="stylesheet">
+    <link href="/css/album.css" rel="stylesheet"> 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
 
@@ -26,7 +28,10 @@
 </head>
 <body>
     @include ('layouts.nav')
-    @yield ('content')
+
+    <div class="container">
+        @yield ('content')
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
