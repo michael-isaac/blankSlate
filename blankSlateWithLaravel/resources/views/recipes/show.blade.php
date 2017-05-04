@@ -19,7 +19,7 @@
 								{{ $ingredient -> measurement }}
 								{{ $ingredient -> name}}
 								@if(!empty ($ingredient->description)), @endif
-								{{ $ingredient -> descrition }}
+								{{ $ingredient -> description }}
 							</li>
 						@endforeach
 					</ul>

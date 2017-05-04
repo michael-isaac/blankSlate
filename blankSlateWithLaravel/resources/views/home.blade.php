@@ -24,7 +24,13 @@
             <div class="caption">
               <h3> {{ $recipe -> name }} </h3>
               <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Add to Cart</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              <form method="POST" action="/meals/addToCart">
+                <div class="form-group">
+                  {{ csrf_field() }}
+                  <input type="hidden" name="recipeID" value="{{ $recipe->id }}" />
+                  <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

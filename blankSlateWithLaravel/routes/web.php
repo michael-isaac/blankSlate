@@ -27,4 +27,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::post('/meals/addToCart', 'MealController@store');
+
 

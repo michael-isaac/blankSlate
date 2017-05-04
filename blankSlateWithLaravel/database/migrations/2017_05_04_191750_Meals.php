@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Recipes extends Migration
+class Meals extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class Recipes extends Migration
      */
     public function up()
     {
-        Schema::create('Recipes', function (Blueprint $table) {
+        //
+        Schema::create('Meals', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('directions');
-            $table->text('filename');
-            $table->integer('owner_UserID');
-            $table->integer('totalTime');
+            $table->integer('recipeID');
+            $table->integer('userID');
+            $table->dateTime('addedToCart');
+            $table->dateTime('removedFromCartTime');
+            $table->boolean('removedFromCartBool');
             $table->timestamps();
         });
     }
@@ -31,6 +32,7 @@ class Recipes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Recipes');
+        //
+        Schema::dropIfExists('Meals');
     }
 }

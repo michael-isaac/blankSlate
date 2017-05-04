@@ -35,8 +35,16 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //add meal to shopping cart -- need to save the user, recipe, and dateTime
+        $meal = new \App\Meal;
+        $meal->recipeID = Request('recipeID');
+        $meal->addedToCart = date('Y-m-d H:i:s');
+        $meal->userID = auth()->id();
+        //save it to the database
+        $meal->save();
 
+        //and then redirect to the home page
+        return redirect('/');
 
     }
 
