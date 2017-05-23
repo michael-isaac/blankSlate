@@ -23,6 +23,7 @@
                     &nbsp;
                 </ul>
 
+                <a class="" href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->

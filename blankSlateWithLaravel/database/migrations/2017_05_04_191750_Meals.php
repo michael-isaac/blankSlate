@@ -21,6 +21,7 @@ class Meals extends Migration
             $table->dateTime('addedToCart');
             $table->dateTime('removedFromCartTime');
             $table->boolean('removedFromCartBool');
+            //need to add column for whether or not it has been paid for, whether it has been delivered...or have a cross refernce in another table
             $table->timestamps();
         });
     }
